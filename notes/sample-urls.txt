@@ -1,0 +1,5 @@
+http://localhost:8080/MyJpaTestProject/customer/Boyd
+
+http://localhost:8080/MyJpaTestProject/customer/Smith
+
+http://localhost:8080/MyJpaTestProject/customer/ted
