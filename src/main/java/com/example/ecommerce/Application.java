@@ -20,7 +20,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
 //@EnableJpaRepositories(basePackages = {"com.ecommerce.dao"})
 @ComponentScan //(basePackages = {"com.ecommerce.controller","com.ecommerce.model", "com.ecommerce.service"})
-//@EnableCaching
+@EnableCaching
 public class Application extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
