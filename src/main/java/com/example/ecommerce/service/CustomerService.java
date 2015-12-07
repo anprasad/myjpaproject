@@ -14,20 +14,22 @@ public class CustomerService {
 	@Autowired
 	CustomerRepository customerDao;
 	
-	public List<Customer> getCustomerService(){
-
-		List<Customer> foundCustomers = (List<Customer>) customerDao.findAll();
-		
-		return foundCustomers;
+	public List<Customer> getAllCustomers(){		
+		return (List<Customer>) customerDao.findAll();
+	}
+	
+	public Customer getCustomer(Long id){		
+		return customerDao.findOne(id);
 	}
 
-	public List<Customer> createCustomer(List<Customer> customers) {
-		
-		System.out.println("Inside service, the customer to be saved firstName: "+customers.get(0).getFirstName());
-		System.out.println("Inside service, the customer to be saved lastName: "+customers.get(0).getLastName());
-		System.out.println("Inside service, the customer to be saved address: "+customers.get(0).getAddress());
-				
+	public List<Customer> createOrUpdateCustomers(List<Customer> customers) {				
 		return (List<Customer>) customerDao.save(customers);
+	}
+
+	public String deleteCustomer(Long id) {		
+		customerDao.delete(id);
+		Customer checkDeletedCustomer = customerDao.findOne(id);
+		return (checkDeletedCustomer == null) ? id.toString() : ""; 
 	}
 	
 	
