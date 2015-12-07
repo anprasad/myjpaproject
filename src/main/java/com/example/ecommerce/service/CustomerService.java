@@ -21,4 +21,17 @@ public class CustomerService {
 		return foundCustomers;
 	}
 
+	public List<Customer> createCustomer(List<Customer> customers) {
+		
+		System.out.println("Inside service, the customer to be saved firstName: "+customers.get(0).getFirstName());
+		System.out.println("Inside service, the customer to be saved lastName: "+customers.get(0).getLastName());
+		System.out.println("Inside service, the customer to be saved address: "+customers.get(0).getAddress());
+				
+		return (List<Customer>) customerDao.save(customers);
+	}
+	
+	
+	
+	
+
 }
