@@ -13,6 +13,6 @@ import com.example.ecommerce.domain.Customer;
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
-	//@Cacheable(value="customerFindCache")
-	//List<Customer> findByLastName(@Param("lastName") String lastName);
+	@Cacheable(value="customerFindCache")
+	List<Customer> findByLastName(@Param("lastName") String lastName);
 }
